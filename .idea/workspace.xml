@@ -32,16 +32,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e31205fb-88ee-4fcb-bc9d-2c497b20fc3c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/traning.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/traning.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/traning.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/traning.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jsonsqltest/app/About.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jsonsqltest/app/About.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jsonsqltest/app/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jsonsqltest/app/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JSONSQLtest.iws" />
@@ -1842,7 +1832,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446115874116</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="La til ikon og delt opp utskrift melding i ABOUT klasssen">
+      <created>1446118060641</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1446118060641</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1897,7 +1893,8 @@
     <MESSAGE value="NÅ fungerer about Klassen" />
     <MESSAGE value="Lagt til &quot;tost&quot;melding ved fullført spøøring mot DB&#10;&#10;Flyttet textView i About - klassen ned under knappen, og endret bakrundsfarge" />
     <MESSAGE value="Lagt til &quot;toast&quot;melding ved fullført sprøring mot DB&#10;&#10;Flyttet textView i About - klassen ned under knappen, og endret bakrundsfarge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lagt til &quot;toast&quot;melding ved fullført sprøring mot DB&#10;&#10;Flyttet textView i About - klassen ned under knappen, og endret bakrundsfarge" />
+    <MESSAGE value="La til ikon og delt opp utskrift melding i ABOUT klasssen" />
+    <option name="LAST_COMMIT_MESSAGE" value="La til ikon og delt opp utskrift melding i ABOUT klasssen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
