@@ -66,4 +66,10 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:textAlignment="center" android:textColor="#ff000000"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset values"
+            android:id="@+id/reset" android:layout_below="@+id/editText4" android:layout_alignEnd="@+id/resultatVis"
+            android:layout_marginEnd="57dp"/>
 </RelativeLayout>

@@ -7,11 +7,11 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/traning"
-        android:label="@string/Loggførtreningendin"
+        android:label="@string/Loggfortrening"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/Loggførtreningendin" >
+            android:label="@string/Loggfortrening" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

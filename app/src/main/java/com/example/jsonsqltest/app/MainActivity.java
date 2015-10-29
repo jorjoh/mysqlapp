@@ -26,7 +26,7 @@ import java.util.Map;
 public class MainActivity extends Activity {
 	// Deklarerer varriabler (EditText, Button, RequestQueue og string)
 	EditText duration, distance, area, target;
-	Button insert;
+	Button insert, reset;
 	// Kø hvor kode som skal kjøres plasseres
 	RequestQueue requestQueue;
 	// Url til script som kjøres i databasen
@@ -42,6 +42,7 @@ public class MainActivity extends Activity {
 		area = (EditText) findViewById(R.id.editText3);
 		target = (EditText) findViewById(R.id.editText4);
 		insert = (Button) findViewById(R.id.insert);
+		reset = (Button) findViewById(R.id.reset);
 		//
 
 		requestQueue = Volley.newRequestQueue(getApplicationContext());
