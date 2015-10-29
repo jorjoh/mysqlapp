@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SQLJSON.iml" filepath="$PROJECT_DIR$/SQLJSON.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mysqlappintellij.iml" filepath="$PROJECT_DIR$/mysqlappintellij.iml" />
     </modules>
   </component>
 </project>

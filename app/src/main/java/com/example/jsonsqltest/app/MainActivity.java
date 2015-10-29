@@ -60,6 +60,7 @@ public class MainActivity extends Activity {
 								String distance = product.getString("distance");
 								String area = product.getString("area");
 								String target = product.getString("target");
+								//String target = product.getString("target");
 
 								System.out.println(duration +" " + distance + " "+ area + " " + target + "\n");
 								resultTextView.setMovementMethod(new ScrollingMovementMethod());
