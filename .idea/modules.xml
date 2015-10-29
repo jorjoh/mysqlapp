@@ -5,7 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/MySQLGitProject.iml" filepath="$PROJECT_DIR$/MySQLGitProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/SQLJSON.iml" filepath="$PROJECT_DIR$/SQLJSON.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mysqlappintellij.iml" filepath="$PROJECT_DIR$/mysqlappintellij.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mysqlapp.iml" filepath="$PROJECT_DIR$/mysqlapp.iml" />
     </modules>
   </component>
 </project>
