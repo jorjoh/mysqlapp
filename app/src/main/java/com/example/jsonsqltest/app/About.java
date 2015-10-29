@@ -29,7 +29,7 @@ public class About extends MainActivity {
 		final TextView resultTextView = (TextView)findViewById(R.id.resultatVisAbout);
 		showDataFromDB = (Button)findViewById(R.id.showDataAbout);
 		//TextView message = (TextView)findViewById(R.id.message);
-		message.setText("Denne applikasjonen er laget av J�rgen Johansen");
+		message.setText("Denne applikasjonen er laget av Jørgen Johansen");
 
 
 		showDataFromDB.setOnClickListener(new View.OnClickListener() {
