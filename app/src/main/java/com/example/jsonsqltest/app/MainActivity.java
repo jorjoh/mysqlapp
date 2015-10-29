@@ -24,54 +24,65 @@ import java.util.Map;
 
 
 public class MainActivity extends Activity {
-	EditText duration, distance,area,target;
+	// Deklarerer varriabler (EditText, Button, RequestQueue og string)
+	EditText duration, distance, area, target;
 	Button insert;
-	//TextView result;
+	// Kø hvor kode som skal kjøres plasseres
 	RequestQueue requestQueue;
-	String insertUrl ="https://jorgenjohansen.no/trainingData/insertValue.php";
+	// Url til script som kjøres i databasen
+	String insertUrl = "https://jorgenjohansen.no/trainingData/insertValue.php";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		duration = (EditText)findViewById(R.id.editText);
-		distance = (EditText)findViewById(R.id.editText2);
-		area = (EditText)findViewById(R.id.editText3);
-		target = (EditText)findViewById(R.id.editText4);
-		insert = (Button)findViewById(R.id.insert);
+		// Tildeler variabler de forskjellige feltene og finner de i XML-filen
+		duration = (EditText) findViewById(R.id.editText);
+		distance = (EditText) findViewById(R.id.editText2);
+		area = (EditText) findViewById(R.id.editText3);
+		target = (EditText) findViewById(R.id.editText4);
+		insert = (Button) findViewById(R.id.insert);
+		//
 
 		requestQueue = Volley.newRequestQueue(getApplicationContext());
-
+		// Setter på en lytter på "insert" knappen og kjører kode under
 		insert.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				// StringRequest en "innkapslet" forespørsel for å hente svar fra en URL streng
 				StringRequest request = new StringRequest(Request.Method.POST, insertUrl, new Response.Listener<String>() {
 					@Override
 					public void onResponse(String response) {
-
+						System.out.println(response);
 					}
 				}, new Response.ErrorListener() {
 					@Override
 					public void onErrorResponse(VolleyError error) {
 
 					}
-				}){
+				}) {
 					@Override
+					// Bruker HashMap til innseting av data fra EditText feltene og inn mot tabellene i databasen
 					protected Map<String, String> getParams() throws AuthFailureError {
+						// Definerer string parametere som skal sendes inn
 						Map<String, String> parameters = new HashMap<String, String>();
-						parameters.put("duration",duration.getText().toString());
-						parameters.put("distance",distance.getText().toString());
-						parameters.put("area",area.getText().toString());
-						parameters.put("target",target.getText().toString());
+						parameters.put("duration", duration.getText().toString());
+						parameters.put("distance", distance.getText().toString());
+						parameters.put("area", area.getText().toString());
+						parameters.put("target", target.getText().toString());
+						// Returnerer de
 						return parameters;
 					}
 				};
+				// Legger "request" variabelen til i køen
 				requestQueue.add(request);
+				// Tømmer inntastings-feltene etter knappen er trykket
 				duration.setText("");
 				distance.setText("");
 				area.setText("");
 				target.setText("");
-				Toast.makeText(getBaseContext(),"Dataene er registrert i databasen",
+				// Fyrer opp en sucsess melding om at data er sendt til databasen
+				Toast.makeText(getBaseContext(), "Dataene er registrert i databasen",
 						Toast.LENGTH_SHORT).show();
 			}
 		});
@@ -96,7 +107,9 @@ public class MainActivity extends Activity {
 		if (id == R.id.action_settings) {
 			return true;
 		}
-		if(id == R.id.action_aboutme) {
+		// Hvis det finnes en action_aboutme
+		if (id == R.id.action_aboutme) {
+			// Fyrer om nytt "intent" med klasse About
 			startActivity(new Intent(getApplicationContext(), About.class));
 		}
 
