@@ -17,24 +17,28 @@ import org.json.JSONObject;
 
 
 public class About extends MainActivity {
+	// Deklarerer varriabler (Button, String) som brukes senere i prosjektet
 	Button showDataFromDB;
 	String showUrl ="https://jorgenjohansen.no/trainingData/showData.php";
+	TextView message;
+	TextView resultTextView;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_about);
-
-
-		final TextView message = (TextView) findViewById(R.id.textView1);
-		final TextView resultTextView = (TextView)findViewById(R.id.resultatVisAbout);
+		// Tildeler variabler de forskjellige feltene og finner de i XML-filen
+		message = (TextView) findViewById(R.id.textView1);
+		resultTextView = (TextView)findViewById(R.id.resultatVisAbout);
 		showDataFromDB = (Button)findViewById(R.id.showDataAbout);
-		//TextView message = (TextView)findViewById(R.id.message);
+
+		// Setter melding i TextView når du kommer du kommer inn About.class
 		message.setText("Denne applikasjonen er laget av Jørgen Johansen");
 
-
+		// Setter på en lytter på "showDataFromDB" knappen og kjører kode under
 		showDataFromDB.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				// Json objekt som inneholder en URL som POST'er en forespørsel til DB
 				JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
 						showUrl, new Response.Listener<JSONObject>() {
 					@Override
@@ -51,7 +55,8 @@ public class About extends MainActivity {
 
 								System.out.println(duration + " " + distance + " " + area + " " + target + "\n");
 								resultTextView.setMovementMethod(new ScrollingMovementMethod());
-								resultTextView.append("Treningstid: " + duration + "\n" + "Distanse: " + distance + "\n" + "Område: " + area + " \n" + "Mået ditt: " + target + "\n");
+								resultTextView.append("Treningstid: " + duration + "\n" + "Distanse: " + distance + "\n" + "Område: " + area + " \n" + "Målet ditt: " + target + "\n");
+								resultTextView.append("===\n");
 
 								//append(duration +" " + distance + " "+ area + " " + target + "\n");
 							}
