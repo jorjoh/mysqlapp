@@ -31,10 +31,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.example.jsonsqltest.app" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e31205fb-88ee-4fcb-bc9d-2c497b20fc3c" name="Default" comment="Lagt til &quot;tost&quot;melding ved fullført spøøring mot DB&#10;&#10;Flyttet textView i About - klassen ned under knappen, og endret bakrundsfarge">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jsonsqltest/app/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jsonsqltest/app/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+    <list default="true" id="e31205fb-88ee-4fcb-bc9d-2c497b20fc3c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JSONSQLtest.iws" />
@@ -1848,7 +1845,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446114866956</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Lagt til &quot;tost&quot;melding ved fullført spøøring mot DB&#10;&#10;Flyttet textView i About - klassen ned under knappen, og endret bakrundsfarge">
+      <created>1446115850854</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1446115850854</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
