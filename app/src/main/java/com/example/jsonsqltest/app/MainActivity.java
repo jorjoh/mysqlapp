@@ -79,7 +79,7 @@ public class MainActivity extends Activity {
 				// Tømmer inntastings-feltene etter knappen er trykket
 				duration.setText("");
 				distance.setText("");
-				area.setText("");          //Dette må flyttes :D
+				area.setText("");          //Dette må flyttes :D &
 				target.setText("");
 				// Fyrer opp en sucsess melding om at data er sendt til databasen
 				Toast.makeText(getBaseContext(), "Dataene er registrert i databasen",
