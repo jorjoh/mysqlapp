@@ -27,8 +27,8 @@ public class MainActivity extends Activity {
 	Button insert,showData;
 	//TextView result;
 	RequestQueue requestQueue;
-	String insertUrl ="https://jorgenjohansen.no/traningData/insertValue.php";
-	String showUrl ="https://jorgenjohansen.no/traningData/showData.php";
+	String insertUrl ="https://jorgenjohansen.no/trainingData/insertValue.php";
+	String showUrl ="https://jorgenjohansen.no/trainingData/showData.php";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -40,51 +40,10 @@ public class MainActivity extends Activity {
 		insert = (Button)findViewById(R.id.insert);
 		showData = (Button)findViewById(R.id.showDataDB);
 
-		final TextView resultTextView = (TextView)findViewById(R.id.resultatVis);
+
 
 		requestQueue = Volley.newRequestQueue(getApplicationContext());
 
-		showData.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
-						showUrl, new Response.Listener<JSONObject>(){
-					@Override
-					public void onResponse(JSONObject response) {
-						try{
-							JSONArray products = response.getJSONArray("products");
-							for(int i = 0; i< products.length(); i++){
-								JSONObject product = products.getJSONObject(i);
-
-								String duration = product.getString("duration");
-								String distance = product.getString("distance");
-								String area = product.getString("area");
-								String target = product.getString("target");
-								//String target = product.getString("target");
-								//String target = product.getString("target");
-
-								System.out.println(duration +" " + distance + " "+ area + " " + target + "\n");
-								resultTextView.setMovementMethod(new ScrollingMovementMethod());
-								resultTextView.append(duration +" " + distance + " "+ area + " " + target + "\n");
-
-								//append(duration +" " + distance + " "+ area + " " + target + "\n");
-							}
-							resultTextView.append("===\n");
-						}
-						catch (JSONException e){
-							e.printStackTrace();
-						}
-					}
-				}, new Response.ErrorListener(){
-					@Override
-					public void  onErrorResponse(VolleyError error){
-
-					}
-				});
-				requestQueue.add(jsonObjectRequest);
-
-			}
-		});
 		insert.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

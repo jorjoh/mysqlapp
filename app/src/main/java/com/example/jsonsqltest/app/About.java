@@ -1,22 +1,75 @@
 package com.example.jsonsqltest.app;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 public class About extends MainActivity {
-
+	Button showDataFromDB;
+	String showUrl2 ="https://jorgenjohansen.no/trainingData/showData.php";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_about);
 
-		final TextView message = (TextView) findViewById(R.id.textView1);
 
+		final TextView message = (TextView) findViewById(R.id.textView1);
+		final TextView resultTextView = (TextView)findViewById(R.id.resultatVisAbout);
+		showDataFromDB = (Button)findViewById(R.id.showDataAbout);
 		//TextView message = (TextView)findViewById(R.id.message);
 		message.setText("Denne applikasjonen er laget av Jørgen Johansen");
+
+
+		showDataFromDB.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
+						showUrl2, new Response.Listener<JSONObject>() {
+					@Override
+					public void onResponse(JSONObject response) {
+						try {
+							JSONArray products = response.getJSONArray("products");
+							for (int i = 0; i < products.length(); i++) {
+								JSONObject product = products.getJSONObject(i);
+
+								String duration = product.getString("duration");
+								String distance = product.getString("distance");
+								String area = product.getString("area");
+								String target = product.getString("target");
+
+								System.out.println(duration + " " + distance + " " + area + " " + target + "\n");
+								resultTextView.setMovementMethod(new ScrollingMovementMethod());
+								resultTextView.append(duration + " " + distance + " " + area + " " + target + "\n");
+
+								//append(duration +" " + distance + " "+ area + " " + target + "\n");
+							}
+							resultTextView.append("===\n");
+						} catch (JSONException e) {
+							e.printStackTrace();
+						}
+					}
+				}, new Response.ErrorListener() {
+					@Override
+					public void onErrorResponse(VolleyError error) {
+
+					}
+				});
+				requestQueue.add(jsonObjectRequest);
+
+			}
+		});
 	}
 
 
