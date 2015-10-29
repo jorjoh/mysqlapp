@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent" android:weightSum="1" android:background="#fffcffd9">
 
     <TextView
             android:layout_width="wrap_content"
@@ -10,9 +10,14 @@
             android:text="New Text"
             android:id="@+id/textView1" android:layout_gravity="center_horizontal"/>
 
-    <TextView
+    <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Show data from DB"
+            android:id="@+id/showDataAbout" android:layout_gravity="center_horizontal"/>
+    <TextView
+            android:layout_width="394dp"
+            android:layout_height="match_parent"
             android:scrollbars="vertical"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/resultatVisAbout"
@@ -21,9 +26,4 @@
             android:layout_alignParentEnd="true"
             android:layout_above="@+id/showDataDB"
             android:textAlignment="center" android:textColor="#ff000000"/>
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/showDataAbout" android:layout_gravity="center_horizontal"/>
 </LinearLayout>

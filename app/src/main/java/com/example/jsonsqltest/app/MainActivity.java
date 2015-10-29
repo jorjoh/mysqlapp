@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.android.volley.*;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
@@ -69,6 +70,12 @@ public class MainActivity extends Activity {
 					}
 				};
 				requestQueue.add(request);
+				duration.setText("");
+				distance.setText("");
+				area.setText("");
+				target.setText("");
+				Toast.makeText(getBaseContext(),"Dataene er registrert i databasen",
+						Toast.LENGTH_SHORT).show();
 			}
 		});
 
