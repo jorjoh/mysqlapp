@@ -77,13 +77,21 @@ public class MainActivity extends Activity {
 				};
 				// Legger "request" variabelen til i køen
 				requestQueue.add(request);
-				// Tømmer inntastings-feltene etter knappen er trykket
+
+				// Fyrer opp en sucsess melding om at data er sendt til databasen
+				Toast.makeText(getBaseContext(), "Dataene er registrert i databasen",
+						Toast.LENGTH_SHORT).show();
+			}
+		});
+		reset.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
 				duration.setText("");
 				distance.setText("");
 				area.setText("");          //Dette må flyttes :D & TEST MOT GitLab
 				target.setText("");
 				// Fyrer opp en sucsess melding om at data er sendt til databasen
-				Toast.makeText(getBaseContext(), "Dataene er registrert i databasen",
+				Toast.makeText(getBaseContext(), "Alle felter er nullstillt",
 						Toast.LENGTH_SHORT).show();
 			}
 		});
