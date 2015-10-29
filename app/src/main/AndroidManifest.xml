@@ -6,12 +6,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@mipmap/traning"
+        android:label="@string/Loggførtreningendin"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/Loggførtreningendin" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

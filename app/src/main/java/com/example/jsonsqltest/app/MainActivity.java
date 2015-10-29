@@ -25,11 +25,11 @@ import java.util.Map;
 
 public class MainActivity extends Activity {
 	EditText duration, distance,area,target;
-	Button insert,showData;
+	Button insert;
 	//TextView result;
 	RequestQueue requestQueue;
 	String insertUrl ="https://jorgenjohansen.no/trainingData/insertValue.php";
-	String showUrl ="https://jorgenjohansen.no/trainingData/showData.php";
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -39,9 +39,6 @@ public class MainActivity extends Activity {
 		area = (EditText)findViewById(R.id.editText3);
 		target = (EditText)findViewById(R.id.editText4);
 		insert = (Button)findViewById(R.id.insert);
-		showData = (Button)findViewById(R.id.showDataDB);
-
-
 
 		requestQueue = Volley.newRequestQueue(getApplicationContext());
 
@@ -102,7 +99,6 @@ public class MainActivity extends Activity {
 		if(id == R.id.action_aboutme) {
 			startActivity(new Intent(getApplicationContext(), About.class));
 		}
-
 
 		return super.onOptionsItemSelected(item);
 	}

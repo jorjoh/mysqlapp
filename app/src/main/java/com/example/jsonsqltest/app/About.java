@@ -18,7 +18,7 @@ import org.json.JSONObject;
 
 public class About extends MainActivity {
 	Button showDataFromDB;
-	String showUrl2 ="https://jorgenjohansen.no/trainingData/showData.php";
+	String showUrl ="https://jorgenjohansen.no/trainingData/showData.php";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -29,14 +29,14 @@ public class About extends MainActivity {
 		final TextView resultTextView = (TextView)findViewById(R.id.resultatVisAbout);
 		showDataFromDB = (Button)findViewById(R.id.showDataAbout);
 		//TextView message = (TextView)findViewById(R.id.message);
-		message.setText("Denne applikasjonen er laget av J�rgen Johansen");
+		message.setText("Denne applikasjonen er laget av J�rgen Johansen");
 
 
 		showDataFromDB.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
-						showUrl2, new Response.Listener<JSONObject>() {
+						showUrl, new Response.Listener<JSONObject>() {
 					@Override
 					public void onResponse(JSONObject response) {
 						try {
@@ -51,7 +51,7 @@ public class About extends MainActivity {
 
 								System.out.println(duration + " " + distance + " " + area + " " + target + "\n");
 								resultTextView.setMovementMethod(new ScrollingMovementMethod());
-								resultTextView.append(duration + " " + distance + " " + area + " " + target + "\n");
+								resultTextView.append("Treningstid: " + duration + "\n" + "Distanse: " + distance + "\n" + "Område: " + area + " \n" + "Mået ditt: " + target + "\n");
 
 								//append(duration +" " + distance + " "+ area + " " + target + "\n");
 							}
