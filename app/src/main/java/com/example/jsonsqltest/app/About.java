@@ -52,10 +52,11 @@ public class About extends MainActivity {
 								String distance = product.getString("distance");
 								String area = product.getString("area");
 								String target = product.getString("target");
+								String created_at = product.getString("created_at");
 
 								System.out.println(duration + " " + distance + " " + area + " " + target + "\n");
 								resultTextView.setMovementMethod(new ScrollingMovementMethod());
-								resultTextView.append("Treningstid: " + duration + "\n" + "Distanse: " + distance + "\n" + "Område: " + area + " \n" + "Målet ditt: " + target + "\n");
+								resultTextView.append("Treningstid: " + duration + "\n" + "Distanse: " + distance + "\n" + "Område: " + area + " \n" + "Målet ditt: " + target + "\n"+ "Dato: " + created_at + "\n");
 								resultTextView.append("===\n");
 
 								//append(duration +" " + distance + " "+ area + " " + target + "\n");

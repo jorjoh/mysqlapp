@@ -86,26 +86,28 @@ public class MainActivity extends Activity {
 						parameters.put("area", area.getText().toString());
 						parameters.put("target", target.getText().toString());
 						// Returnerer de
-						try {
+						/*try {
 							Thread.sleep(3000);
 
 						} catch (InterruptedException e) {
 							e.printStackTrace();
-						}
+						}*/
 						//
 						return parameters;
 					}
 				};
 				// Legger "request" variabelen til i køen
 				requestQueue.add(request);
-				progress.dismiss();
+
 
 				// Fyrer opp en sucsess melding om at data er sendt til databasen
 				Toast.makeText(getBaseContext(), "Dataene er registrert i databasen",
 						Toast.LENGTH_SHORT).show();
-
+				progress.dismiss();
 			}
+
 		});
+
 		reset.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
