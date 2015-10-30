@@ -1,16 +1,14 @@
 package com.example.jsonsqltest.app;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 import com.android.volley.*;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
@@ -27,6 +25,8 @@ public class MainActivity extends Activity {
 	// Deklarerer varriabler (EditText, Button, RequestQueue og string)
 	EditText duration, distance, area, target;
 	Button insert, reset;
+	ProgressBar progressBar;
+	ProgressDialog progress;
 	// Kø hvor kode som skal kjøres plasseres
 	RequestQueue requestQueue;
 	// Url til script som kjøres i databasen
@@ -43,6 +43,9 @@ public class MainActivity extends Activity {
 		target = (EditText) findViewById(R.id.editText4);
 		insert = (Button) findViewById(R.id.insert);
 		reset = (Button) findViewById(R.id.reset);
+		reset = (Button) findViewById(R.id.reset);
+		//progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
 		//
 
 		requestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -50,6 +53,17 @@ public class MainActivity extends Activity {
 		insert.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				progress = ProgressDialog.show(MainActivity.this, "dialog title",
+						"dialog message", true);
+				/*ProgressDialog progress;
+
+				progress = new ProgressDialog(this);
+				progress.setTitle("Please Wait!!");
+				progress.setMessage("Wait!!");
+				progress.setCancelable(true);
+				progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+				progress.show();*/
+				//progressBar.setVisibility(View.VISIBLE);
 				// StringRequest en "innkapslet" forespørsel for å hente svar fra en URL streng
 				StringRequest request = new StringRequest(Request.Method.POST, insertUrl, new Response.Listener<String>() {
 					@Override
@@ -72,20 +86,30 @@ public class MainActivity extends Activity {
 						parameters.put("area", area.getText().toString());
 						parameters.put("target", target.getText().toString());
 						// Returnerer de
+						try {
+							Thread.sleep(3000);
+
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+
 						return parameters;
 					}
 				};
 				// Legger "request" variabelen til i køen
 				requestQueue.add(request);
+				progress.dismiss();
 
 				// Fyrer opp en sucsess melding om at data er sendt til databasen
 				Toast.makeText(getBaseContext(), "Dataene er registrert i databasen",
 						Toast.LENGTH_SHORT).show();
+
 			}
 		});
 		reset.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				//progressBar.setVisibility(View.VISIBLE);
 				duration.setText("");
 				distance.setText("");
 				area.setText("");          //Dette må flyttes :D & TEST MOT GitLab

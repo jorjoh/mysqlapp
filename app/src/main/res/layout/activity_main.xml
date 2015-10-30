@@ -72,12 +72,4 @@
             android:text="Reset values"
             android:id="@+id/reset" android:layout_below="@+id/editText4" android:layout_alignEnd="@+id/resultatVis"
             android:layout_marginEnd="57dp"/>
-    <ProgressBar
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/progressBar"
-            android:max="5"
-            android:progress="4" android:indeterminate="true"
-            android:layout_below="@+id/resultatVis" android:layout_toEndOf="@+id/insert"/>
 </RelativeLayout>
