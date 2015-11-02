@@ -78,4 +78,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/progressBar" android:layout_below="@+id/resultatVis"
             android:layout_centerHorizontal="true"/>
+    <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner" android:layout_below="@+id/progressBar" android:layout_centerHorizontal="true"
+            android:spinnerMode="dropdown"/>
 </RelativeLayout>

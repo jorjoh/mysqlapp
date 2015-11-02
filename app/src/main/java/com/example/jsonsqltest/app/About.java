@@ -22,6 +22,7 @@ public class About extends MainActivity {
 	String showUrl ="https://jorgenjohansen.no/trainingData/showData.php";
 	TextView message;
 	TextView resultTextView;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

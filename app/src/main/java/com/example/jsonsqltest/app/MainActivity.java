@@ -12,7 +12,9 @@ import com.android.volley.*;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -22,9 +24,10 @@ public class MainActivity extends Activity {
 	Button insert, reset;
 	ProgressBar progressBar;
 	ProgressDialog progress;
-	// Kø hvor kode som skal kjøres plasseres
+	Spinner spinner;
+	// KÃ¸ hvor kode som skal kjÃ¸res plasseres
 	RequestQueue requestQueue;
-	// Url til script som kjøres i databasen
+	// Url til script som kjÃ¸res i databasen
 	String insertUrl = "https://jorgenjohansen.no/trainingData/insertValue.php";
 
 	@Override
@@ -40,12 +43,26 @@ public class MainActivity extends Activity {
 		reset = (Button) findViewById(R.id.reset);
 		reset = (Button) findViewById(R.id.reset);
 		progressBar = (ProgressBar) findViewById(R.id.progressBar);
+		spinner = (Spinner)findViewById(R.id.spinner);
 
 		//
 		progressBar.setVisibility(View.GONE);
 
+		List<String> spinnerArray =  new ArrayList<String>();
+		spinnerArray.add("Intervalltrening");
+		spinnerArray.add("Joggetur");
+		spinnerArray.add("GÃ¥-tur");
+		spinnerArray.add("Styrketrening");
+		spinnerArray.add("Generell lÃ¸ping");
+
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+				this, android.R.layout.simple_spinner_item, spinnerArray);
+
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinner.setAdapter(adapter);
+
 		requestQueue = Volley.newRequestQueue(getApplicationContext());
-		// Setter på en lytter på "insert" knappen og kjører kode under
+		// Setter pÃ¥ en lytter pÃ¥ "insert" knappen og kjÃ¸rer kode under
 		insert.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -53,7 +70,7 @@ public class MainActivity extends Activity {
 						"dialog message", true);
 
 				//progressBar.setVisibility(View.VISIBLE);
-				// StringRequest en "innkapslet" forespørsel for å hente svar fra en URL streng
+				// StringRequest en "innkapslet" forespÃ¸rsel for Ã¥ hente svar fra en URL streng
 				StringRequest request = new StringRequest(Request.Method.POST, insertUrl, new Response.Listener<String>() {
 					@Override
 					public void onResponse(String response) {
@@ -73,7 +90,8 @@ public class MainActivity extends Activity {
 						parameters.put("duration", duration.getText().toString());
 						parameters.put("distance", distance.getText().toString());
 						parameters.put("area", area.getText().toString());
-						parameters.put("target", typeOfTraining.getText().toString());
+						parameters.put("target", spinner.getSelectedItem().toString());
+						//parameters.put("target", typeOfTraining.getText().toString());
 						// Returnerer de
 						/*try {
 							Thread.sleep(3000);
@@ -85,7 +103,7 @@ public class MainActivity extends Activity {
 						return parameters;
 					}
 				};
-				// Legger "request" variabelen til i køen
+				// Legger "request" variabelen til i kÃ¸en
 				requestQueue.add(request);
 
 				// Fyrer opp en sucsess melding om at data er sendt til databasen
@@ -102,7 +120,7 @@ public class MainActivity extends Activity {
 				progressBar.setVisibility(View.VISIBLE);
 				duration.setText("");
 				distance.setText("");
-				area.setText("");          //Dette må flyttes :D & TEST MOT GitLab
+				area.setText("");          //Dette mÃ¥ flyttes :D & TEST MOT GitLab
 				typeOfTraining.setText("");
 				// Fyrer opp en sucsess melding om at data er sendt til databasen
 				Toast.makeText(getBaseContext(), "Alle felter er nullstillt",
