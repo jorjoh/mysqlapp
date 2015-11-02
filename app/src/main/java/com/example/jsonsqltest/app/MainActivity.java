@@ -50,6 +50,7 @@ public class MainActivity extends Activity {
 
 		// Lager en liste som skal inneholde verdiene til spinneren(nedtreksmenyen)
 		List<String> spinnerArray =  new ArrayList<String>();
+		spinnerArray.add("Velg trening");
 		spinnerArray.add("Intervalltrening");
 		spinnerArray.add("Joggetur");
 		spinnerArray.add("Gå-tur");
@@ -112,7 +113,7 @@ public class MainActivity extends Activity {
 		reset.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				progressBar.setVisibility(View.VISIBLE);
+				//progressBar.setVisibility(View.VISIBLE);
 				duration.setText("");
 				distance.setText("");
 				area.setText("");          //Dette må flyttes :D & TEST MOT GitLab
