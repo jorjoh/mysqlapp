@@ -4,18 +4,13 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
 import com.android.volley.*;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +18,7 @@ import java.util.Map;
 
 public class MainActivity extends Activity {
 	// Deklarerer varriabler (EditText, Button, RequestQueue og string)
-	EditText duration, distance, area, target;
+	EditText duration, distance, area, typeOfTraining;
 	Button insert, reset;
 	ProgressBar progressBar;
 	ProgressDialog progress;
@@ -40,13 +35,14 @@ public class MainActivity extends Activity {
 		duration = (EditText) findViewById(R.id.editText);
 		distance = (EditText) findViewById(R.id.editText2);
 		area = (EditText) findViewById(R.id.editText3);
-		target = (EditText) findViewById(R.id.editText4);
+		typeOfTraining = (EditText) findViewById(R.id.editText4);
 		insert = (Button) findViewById(R.id.insert);
 		reset = (Button) findViewById(R.id.reset);
 		reset = (Button) findViewById(R.id.reset);
-		//progressBar = (ProgressBar) findViewById(R.id.progressBar);
+		progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
 		//
+		progressBar.setVisibility(View.GONE);
 
 		requestQueue = Volley.newRequestQueue(getApplicationContext());
 		// Setter på en lytter på "insert" knappen og kjører kode under
@@ -55,14 +51,7 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				progress = ProgressDialog.show(MainActivity.this, "dialog title",
 						"dialog message", true);
-				/*ProgressDialog progress;
 
-				progress = new ProgressDialog(this);
-				progress.setTitle("Please Wait!!");
-				progress.setMessage("Wait!!");
-				progress.setCancelable(true);
-				progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-				progress.show();*/
 				//progressBar.setVisibility(View.VISIBLE);
 				// StringRequest en "innkapslet" forespørsel for å hente svar fra en URL streng
 				StringRequest request = new StringRequest(Request.Method.POST, insertUrl, new Response.Listener<String>() {
@@ -84,7 +73,7 @@ public class MainActivity extends Activity {
 						parameters.put("duration", duration.getText().toString());
 						parameters.put("distance", distance.getText().toString());
 						parameters.put("area", area.getText().toString());
-						parameters.put("target", target.getText().toString());
+						parameters.put("target", typeOfTraining.getText().toString());
 						// Returnerer de
 						/*try {
 							Thread.sleep(3000);
@@ -99,7 +88,6 @@ public class MainActivity extends Activity {
 				// Legger "request" variabelen til i køen
 				requestQueue.add(request);
 
-
 				// Fyrer opp en sucsess melding om at data er sendt til databasen
 				Toast.makeText(getBaseContext(), "Dataene er registrert i databasen",
 						Toast.LENGTH_SHORT).show();
@@ -111,11 +99,11 @@ public class MainActivity extends Activity {
 		reset.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				//progressBar.setVisibility(View.VISIBLE);
+				progressBar.setVisibility(View.VISIBLE);
 				duration.setText("");
 				distance.setText("");
 				area.setText("");          //Dette må flyttes :D & TEST MOT GitLab
-				target.setText("");
+				typeOfTraining.setText("");
 				// Fyrer opp en sucsess melding om at data er sendt til databasen
 				Toast.makeText(getBaseContext(), "Alle felter er nullstillt",
 						Toast.LENGTH_SHORT).show();

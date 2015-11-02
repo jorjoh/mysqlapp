@@ -59,7 +59,7 @@ public class About extends MainActivity {
 								resultTextView.append("Treningstid: " + duration + "\n" + "Distanse: " + distance + "\n" + "Område: " + area + " \n" + "Målet ditt: " + target + "\n"+ "Dato: " + created_at + "\n");
 								resultTextView.append("===\n");
 
-								//append(duration +" " + distance + " "+ area + " " + target + "\n");
+								//append(duration +" " + distance + " "+ area + " " + typeOfTraining + "\n");
 							}
 							resultTextView.append("===\n");
 						} catch (JSONException e) {
