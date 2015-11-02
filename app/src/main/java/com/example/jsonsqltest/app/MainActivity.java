@@ -48,6 +48,7 @@ public class MainActivity extends Activity {
 		//
 		progressBar.setVisibility(View.GONE);
 
+		// Lager en liste som skal inneholde verdiene til spinneren(nedtreksmenyen)
 		List<String> spinnerArray =  new ArrayList<String>();
 		spinnerArray.add("Intervalltrening");
 		spinnerArray.add("Joggetur");
@@ -55,11 +56,12 @@ public class MainActivity extends Activity {
 		spinnerArray.add("Styrketrening");
 		spinnerArray.add("Generell løping");
 
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+		// Legger så denne listen inn i et array som sendes inn til spinneren som parameter
+		ArrayAdapter<String> arrayWithtraningValues = new ArrayAdapter<String>(
 				this, android.R.layout.simple_spinner_item, spinnerArray);
 
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spinner.setAdapter(adapter);
+		arrayWithtraningValues.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinner.setAdapter(arrayWithtraningValues);
 
 		requestQueue = Volley.newRequestQueue(getApplicationContext());
 		// Setter på en lytter på "insert" knappen og kjører kode under
@@ -93,13 +95,6 @@ public class MainActivity extends Activity {
 						parameters.put("target", spinner.getSelectedItem().toString());
 						//parameters.put("target", typeOfTraining.getText().toString());
 						// Returnerer de
-						/*try {
-							Thread.sleep(3000);
-
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}*/
-						//
 						return parameters;
 					}
 				};
