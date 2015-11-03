@@ -38,13 +38,7 @@
             android:layout_below="@+id/editText2"
             android:layout_alignParentStart="true" />
 
-    <EditText
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/editText4"
-            android:layout_alignTop="@+id/editText3" android:layout_alignEnd="@+id/resultatVis"/>
+
 
     <Button
             android:layout_width="wrap_content"
@@ -68,18 +62,18 @@
             android:layout_height="wrap_content"
             android:text="Reset values"
             android:id="@+id/reset"
-            android:layout_above="@+id/resultatVis" android:layout_toStartOf="@+id/editText4"/>
+            android:layout_above="@+id/resultatVis" android:layout_alignParentEnd="true"/>
     <ProgressBar
             style="?android:attr/progressBarStyleLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/progressBar"
-            android:layout_below="@+id/reset" android:layout_toEndOf="@+id/reset"/>
+            android:layout_alignTop="@+id/resultatVis" android:layout_toStartOf="@+id/reset"/>
     <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/spinner"
-            android:spinnerMode="dropdown" android:layout_below="@+id/editText3"
-            android:layout_toStartOf="@+id/reset" android:textAlignment="textStart"
-            />
+            android:spinnerMode="dropdown"
+            android:textAlignment="textStart"
+            android:layout_below="@+id/editText3"/>
 </RelativeLayout>

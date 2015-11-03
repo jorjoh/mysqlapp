@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
 		duration = (EditText) findViewById(R.id.editText);
 		distance = (EditText) findViewById(R.id.editText2);
 		area = (EditText) findViewById(R.id.editText3);
-		typeOfTraining = (EditText) findViewById(R.id.editText4);
+		//typeOfTraining = (EditText) findViewById(R.id.editText4);
 		insert = (Button) findViewById(R.id.insert);
 		reset = (Button) findViewById(R.id.reset);
 		reset = (Button) findViewById(R.id.reset);
