@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context=".MainActivity" android:background="#ffff4238">
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="duration"
+            android:ems="10"
+            android:id="@+id/editText"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="distance"
+            android:ems="10"
+            android:id="@+id/editText2"
+            android:layout_below="@+id/editText"
+            android:layout_alignEnd="@+id/editText" />
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="area"
+            android:ems="10"
+            android:id="@+id/editText3"
+            android:layout_below="@+id/editText2"
+            android:layout_alignParentStart="true" />
+
+    <EditText
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editText4"
+            android:layout_alignTop="@+id/editText3" android:layout_alignEnd="@+id/resultatVis"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Insert data"
+            android:id="@+id/insert"
+            android:layout_below="@+id/spinner" android:layout_alignParentStart="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/resultatVis"
+            android:layout_below="@+id/insert"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:textAlignment="center" android:textColor="#ff000000"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset values"
+            android:id="@+id/reset"
+            android:layout_above="@+id/resultatVis" android:layout_toStartOf="@+id/editText4"/>
+    <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:layout_below="@+id/reset" android:layout_toEndOf="@+id/reset"/>
+    <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            android:spinnerMode="dropdown"
+            android:textAlignment="textStart"
+            android:layout_centerVertical="true" android:layout_alignParentStart="true"/>
+</RelativeLayout>
