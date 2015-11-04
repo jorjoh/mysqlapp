@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
 		progressBar = (ProgressBar) findViewById(R.id.progressBar);
 		spinner = (Spinner)findViewById(R.id.spinner);
 
-		//
+		//Progrsjonsbar som ikke er implementert helt...
 		progressBar.setVisibility(View.GONE);
 
 		// Lager en liste som skal inneholde verdiene til spinneren(nedtreksmenyen)
@@ -116,8 +116,8 @@ public class MainActivity extends Activity {
 				//progressBar.setVisibility(View.VISIBLE);
 				duration.setText("");
 				distance.setText("");
-				area.setText("");          //Dette må flyttes :D & TEST MOT GitLab
-				typeOfTraining.setText("");
+				area.setText("");
+				//typeOfTraining.setText("");
 				// Fyrer opp en sucsess melding om at data er sendt til databasen
 				Toast.makeText(getBaseContext(), "Alle felter er nullstillt",
 						Toast.LENGTH_SHORT).show();
