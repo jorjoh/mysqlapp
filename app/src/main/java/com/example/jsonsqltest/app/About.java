@@ -16,6 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
+
 public class About extends MainActivity {
 	// Deklarerer varriabler (Button, String) som brukes senere i prosjektet
 	Button showDataFromDB;
