@@ -19,7 +19,7 @@ import java.util.Map;
 
 
 public class MainActivity extends Activity {
-	// Deklarerer varriabler (EditText, Button, RequestQueue og string)
+	// Deklarerer varriabler (EditText, Button, RequestQueue og string) & Kenneth ser på "test"
 	EditText duration, distance, area, typeOfTraining;
 	Button insert, reset;
 	ProgressBar progressBar;
