@@ -22,6 +22,11 @@
                 android:name=".About"
                 android:label="@string/title_activity_about" >
         </activity>
+        <activity
+            android:name=".AddSpinnerItem"
+            android:label="@string/title_activity_about" >
+        </activity>
+
 
     </application>
 

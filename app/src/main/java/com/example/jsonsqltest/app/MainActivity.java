@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 
+
 public class MainActivity extends Activity {
 	// Deklarerer varriabler (EditText, Button, RequestQueue og string) & Kenneth ser på "test"
 	EditText duration, distance, area, typeOfTraining;
@@ -29,6 +30,7 @@ public class MainActivity extends Activity {
 	RequestQueue requestQueue;
 	// Url til script som kjøres i databasen
 	String insertUrl = "https://jorgenjohansen.no/trainingData/insertValue.php";
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,8 @@ public class MainActivity extends Activity {
 		spinnerArray.add("Gå-tur");
 		spinnerArray.add("Styrketrening");
 		spinnerArray.add("Generell løping");
+
+
 
 		// Legger så denne listen inn i et array som sendes inn til spinneren som parameter
 		ArrayAdapter<String> arrayWithtraningValues = new ArrayAdapter<String>(
@@ -127,7 +131,7 @@ public class MainActivity extends Activity {
 		dbInfo.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(getApplicationContext(), About.class));
+				startActivity(new Intent(getApplicationContext(), AddSpinnerItem.class));
 			}
 		});
 

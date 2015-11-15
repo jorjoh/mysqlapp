@@ -84,5 +84,6 @@
         android:text="ShowDbdata"
         android:id="@+id/dbInfo"
         android:layout_below="@+id/resultatVis"
-        android:layout_toEndOf="@+id/editText3" />
+        android:layout_toEndOf="@+id/editText3"
+        android:layout_alignStart="@+id/reset" />
 </RelativeLayout>
