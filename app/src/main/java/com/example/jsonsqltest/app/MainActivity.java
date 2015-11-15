@@ -21,7 +21,7 @@ import java.util.Map;
 public class MainActivity extends Activity {
 	// Deklarerer varriabler (EditText, Button, RequestQueue og string) & Kenneth ser på "test"
 	EditText duration, distance, area, typeOfTraining;
-	Button insert, reset;
+	Button insert, reset, dbInfo;
 	ProgressBar progressBar;
 	ProgressDialog progress;
 	Spinner spinner;
@@ -42,6 +42,7 @@ public class MainActivity extends Activity {
 		insert = (Button) findViewById(R.id.insert);
 		reset = (Button) findViewById(R.id.reset);
 		reset = (Button) findViewById(R.id.reset);
+		dbInfo = (Button) findViewById(R.id.dbInfo);
 		progressBar = (ProgressBar) findViewById(R.id.progressBar);
 		spinner = (Spinner)findViewById(R.id.spinner);
 
@@ -121,6 +122,12 @@ public class MainActivity extends Activity {
 				// Fyrer opp en sucsess melding om at data er sendt til databasen
 				Toast.makeText(getBaseContext(), "Alle felter er nullstillt",
 						Toast.LENGTH_SHORT).show();
+			}
+		});
+		dbInfo.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(getApplicationContext(), About.class));
 			}
 		});
 

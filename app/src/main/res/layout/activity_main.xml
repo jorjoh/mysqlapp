@@ -68,7 +68,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/progressBar"
-            android:layout_alignTop="@+id/resultatVis" android:layout_toStartOf="@+id/reset"/>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
     <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,4 +77,12 @@
             android:spinnerMode="dropdown"
             android:textAlignment="textStart"
             android:layout_below="@+id/editText3"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ShowDbdata"
+        android:id="@+id/dbInfo"
+        android:layout_below="@+id/resultatVis"
+        android:layout_toEndOf="@+id/editText3" />
 </RelativeLayout>
