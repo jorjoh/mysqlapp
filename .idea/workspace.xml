@@ -47,7 +47,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9c80147-ea82-4f21-b45d-cc958538eb22" name="Default" comment="laget splash screen">
+    <list default="true" id="b9c80147-ea82-4f21-b45d-cc958538eb22" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/splashlogo.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/traningappsplash.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/yin2.png" />
@@ -88,7 +88,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jsonsqltest/app/Spalsh.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.2647059">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="11" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -2011,7 +2011,13 @@
       <option name="project" value="LOCAL" />
       <updated>1448312231064</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="laget splash screen">
+      <created>1448319163099</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1448319163099</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2661,7 +2667,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/jsonsqltest/app/Spalsh.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2647059">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="11" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

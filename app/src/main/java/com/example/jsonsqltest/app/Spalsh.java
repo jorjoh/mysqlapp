@@ -7,7 +7,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-
+/**
+ * Created by Jørgen Johansen on 23.11.2015.
+ */
 public class Spalsh extends Activity {
 
     @Override
