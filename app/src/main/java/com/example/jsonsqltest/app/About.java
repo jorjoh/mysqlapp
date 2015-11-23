@@ -18,7 +18,7 @@ import org.json.JSONObject;
 
 
 public class About extends MainActivity {
-	// Deklarerer varriabler (Button, String) som brukes senere i prosjektet
+	// Deklarerer varriabler (Button, String, Textview) som brukes senere i prosjektet
 	Button showDataFromDB;
 	String showUrl ="https://jorgenjohansen.no/trainingData/showData.php";
 	TextView message;
@@ -40,29 +40,34 @@ public class About extends MainActivity {
 		showDataFromDB.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// Json objekt som inneholder en URL som POST'er en forespørsel til DB
+				// Json objekt som inneholder en URL som POST'er en forespørsel til DB som henter ut data fra tabellene
 				JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
 						showUrl, new Response.Listener<JSONObject>() {
 					@Override
 					public void onResponse(JSONObject response) {
 						try {
+							//Informasjon settes inn i et array fra databasen
 							JSONArray products = response.getJSONArray("products");
+							// Itererer gjennom arrayen med informasjonen hentet fra databasen, tildeler de hver sin string
 							for (int i = 0; i < products.length(); i++) {
 								JSONObject product = products.getJSONObject(i);
-
+								// Lager en string til hver kolonne som informasjon blir hentet ut i
 								String duration = product.getString("duration");
 								String distance = product.getString("distance");
 								String area = product.getString("area");
 								String target = product.getString("target");
 								String created_at = product.getString("created_at");
+								// Debuging - sjekker om den er informasjon i varriablene
+								//System.out.println(duration + " " + distance + " " + area + " " + target + "\n");
 
-								System.out.println(duration + " " + distance + " " + area + " " + target + "\n");
+								// Denne funksjonaliteten gjør slik at det går an å scrolle nedover i textviewen hvis det er så mye informasjon der at det dekker mer en skjermen
 								resultTextView.setMovementMethod(new ScrollingMovementMethod());
 								resultTextView.append("Treningstid: " + duration + "\n" + "Distanse: " + distance + "\n" + "Område: " + area + " \n" + "Målet ditt: " + target + "\n"+ "Dato: " + created_at + "\n");
 								resultTextView.append("===\n");
 
 								//append(duration +" " + distance + " "+ area + " " + typeOfTraining + "\n");
 							}
+							// Legger til skille linjer
 							resultTextView.append("===\n");
 						} catch (JSONException e) {
 							e.printStackTrace();

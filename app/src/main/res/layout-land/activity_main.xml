@@ -43,7 +43,8 @@
             android:layout_height="wrap_content"
             android:text="Insert data"
             android:id="@+id/insert"
-            android:layout_below="@+id/spinner" android:layout_alignParentStart="true"/>
+        android:layout_below="@+id/spinner"
+        android:layout_alignParentStart="true" />
 
     <TextView
             android:layout_width="wrap_content"
@@ -60,13 +61,17 @@
             android:layout_height="wrap_content"
             android:text="Reset values"
             android:id="@+id/reset"
-            android:layout_below="@+id/spinner" android:layout_alignParentEnd="true" android:layout_marginEnd="50dp"/>
-    <ProgressBar
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/progressBar"
-            android:layout_below="@+id/reset" android:layout_toEndOf="@+id/reset"/>
+        android:layout_below="@+id/spinner"
+        android:layout_toEndOf="@+id/editText3" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ShowDbdata"
+        android:id="@+id/dbInfo"
+        android:layout_marginEnd="24dp"
+        android:layout_above="@+id/resultatVis"
+        android:layout_alignEnd="@+id/resultatVis" />
+
     <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

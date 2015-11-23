@@ -1,5 +1,5 @@
 <resources>
-    <string name="Loggfortrening">Awesome Trainingapp</string>
+    <string name="Loggfortrening">Training log</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>

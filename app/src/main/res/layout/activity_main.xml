@@ -63,13 +63,7 @@
             android:text="Reset values"
             android:id="@+id/reset"
             android:layout_above="@+id/resultatVis" android:layout_alignParentEnd="true"/>
-    <ProgressBar
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/progressBar"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+
     <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -84,6 +78,5 @@
         android:text="ShowDbdata"
         android:id="@+id/dbInfo"
         android:layout_below="@+id/resultatVis"
-        android:layout_toEndOf="@+id/editText3"
-        android:layout_alignStart="@+id/reset" />
+        android:layout_alignEnd="@+id/resultatVis" />
 </RelativeLayout>

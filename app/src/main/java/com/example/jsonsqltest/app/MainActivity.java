@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,10 +21,10 @@ import java.util.Map;
 
 
 public class MainActivity extends Activity {
-	// Deklarerer varriabler (EditText, Button, RequestQueue og string) & Kenneth ser på "test"
+	// Deklarerer varriabler (EditText, Button, RequestQueue og string)
 	EditText duration, distance, area, typeOfTraining;
 	Button insert, reset, dbInfo;
-	ProgressBar progressBar;
+	//ProgressBar progressBar;
 	ProgressDialog progress;
 	Spinner spinner;
 	// Kø hvor kode som skal kjøres plasseres
@@ -36,6 +37,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
 		// Tildeler variabler de forskjellige feltene og finner de i XML-filen
 		duration = (EditText) findViewById(R.id.editText);
 		distance = (EditText) findViewById(R.id.editText2);
@@ -43,13 +45,10 @@ public class MainActivity extends Activity {
 		//typeOfTraining = (EditText) findViewById(R.id.editText4);
 		insert = (Button) findViewById(R.id.insert);
 		reset = (Button) findViewById(R.id.reset);
-		reset = (Button) findViewById(R.id.reset);
 		dbInfo = (Button) findViewById(R.id.dbInfo);
-		progressBar = (ProgressBar) findViewById(R.id.progressBar);
 		spinner = (Spinner)findViewById(R.id.spinner);
 
-		//Progrsjonsbar som ikke er implementert helt...
-		progressBar.setVisibility(View.GONE);
+
 
 		// Lager en liste som skal inneholde verdiene til spinneren(nedtreksmenyen)
 		List<String> spinnerArray =  new ArrayList<String>();
@@ -74,10 +73,22 @@ public class MainActivity extends Activity {
 		insert.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				progress = ProgressDialog.show(MainActivity.this, "dialog title",
-						"dialog message", true);
 
-				//progressBar.setVisibility(View.VISIBLE);
+                    progress = ProgressDialog.show(MainActivity.this, "Registrerer i databasen",
+                            "Lagrer informasjonen, venligst vent...", true);
+
+                progress.show();
+
+                // Lager en instans av Handler - klassen
+                Handler handler = new Handler();
+                // Forsinker dialogboksen med 3 sekunder
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        // Dreper dialog boksen etter x-antall sekunder
+                        progress.dismiss();
+                    }}, 2000);  // 2000 milliseconds = 2 sec
+
+
 				// StringRequest en "innkapslet" forespørsel for å hente svar fra en URL streng
 				StringRequest request = new StringRequest(Request.Method.POST, insertUrl, new Response.Listener<String>() {
 					@Override
@@ -110,28 +121,31 @@ public class MainActivity extends Activity {
 				// Fyrer opp en sucsess melding om at data er sendt til databasen
 				Toast.makeText(getBaseContext(), "Dataene er registrert i databasen",
 						Toast.LENGTH_SHORT).show();
-				progress.dismiss();
-			}
+        }
 
 		});
-
+        // Setter en lytter på knappen reset
 		reset.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				//progressBar.setVisibility(View.VISIBLE);
+                //Sletter informasjonen i tekstfeltet
 				duration.setText("");
+                //Sletter informasjonen i tekstfeltet
 				distance.setText("");
+                //Sletter informasjonen i tekstfeltet
 				area.setText("");
-				//typeOfTraining.setText("");
-				// Fyrer opp en sucsess melding om at data er sendt til databasen
+
+				// Fyrer opp en sucsess melding om at alle felter er nullstill
 				Toast.makeText(getBaseContext(), "Alle felter er nullstillt",
 						Toast.LENGTH_SHORT).show();
 			}
 		});
+        // Setter lytter på knappen "dbInfo"
 		dbInfo.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(getApplicationContext(), AddSpinnerItem.class));
+                // Når knappen er trykket fyrer den opp et nytt intent med klassen About
+				startActivity(new Intent(getApplicationContext(), About.class));
 			}
 		});
 
@@ -157,7 +171,7 @@ public class MainActivity extends Activity {
 		}
 		// Hvis det finnes en action_aboutme
 		if (id == R.id.action_aboutme) {
-			// Fyrer om nytt "intent" med klasse About
+			// Fyrer om nytt "intent" med klassen About
 			startActivity(new Intent(getApplicationContext(), About.class));
 		}
 
