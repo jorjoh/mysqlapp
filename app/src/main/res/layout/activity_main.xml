@@ -15,8 +15,8 @@
             android:text="duration"
             android:ems="10"
             android:id="@+id/editText"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/editText2" />
 
     <EditText
             android:layout_width="wrap_content"
@@ -25,8 +25,8 @@
             android:text="distance"
             android:ems="10"
             android:id="@+id/editText2"
-            android:layout_below="@+id/editText"
-            android:layout_alignEnd="@+id/editText" />
+        android:layout_below="@+id/editText"
+        android:layout_alignStart="@+id/editText3" />
 
     <EditText
             android:layout_width="wrap_content"
@@ -35,8 +35,8 @@
             android:text="area"
             android:ems="10"
             android:id="@+id/editText3"
-            android:layout_below="@+id/editText2"
-            android:layout_alignParentStart="true" />
+        android:layout_below="@+id/editText2"
+        android:layout_toEndOf="@+id/insert" />
 
 
 
@@ -70,7 +70,8 @@
             android:id="@+id/spinner"
             android:spinnerMode="dropdown"
             android:textAlignment="textStart"
-            android:layout_below="@+id/editText3"/>
+            android:layout_below="@+id/editText3"
+        android:layout_toEndOf="@+id/textView4" />
 
     <Button
         android:layout_width="wrap_content"
@@ -79,4 +80,34 @@
         android:id="@+id/dbInfo"
         android:layout_below="@+id/resultatVis"
         android:layout_alignEnd="@+id/resultatVis" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Duration"
+        android:id="@+id/textView3"
+        android:layout_above="@+id/editText2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/editText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Area"
+        android:id="@+id/textView4"
+        android:layout_alignBottom="@+id/editText3"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/editText3"
+        android:layout_toStartOf="@+id/editText3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Distance"
+        android:id="@+id/textView5"
+        android:layout_alignTop="@+id/editText2"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/editText2"
+        android:layout_toStartOf="@+id/editText2" />
 </RelativeLayout>

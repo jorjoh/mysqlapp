@@ -61,6 +61,7 @@ public class About extends MainActivity {
 								//System.out.println(duration + " " + distance + " " + area + " " + target + "\n");
 
 								// Denne funksjonaliteten gjør slik at det går an å scrolle nedover i textviewen hvis det er så mye informasjon der at det dekker mer en skjermen
+								resultTextView.setText("");
 								resultTextView.setMovementMethod(new ScrollingMovementMethod());
 								resultTextView.append("Treningstid: " + duration + "\n" + "Distanse: " + distance + "\n" + "Område: " + area + " \n" + "Målet ditt: " + target + "\n"+ "Dato: " + created_at + "\n");
 								resultTextView.append("===\n");
