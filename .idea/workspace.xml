@@ -48,10 +48,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9c80147-ea82-4f21-b45d-cc958538eb22" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dokumentasjon av obligatoriskOppgave.docx" afterPath="$PROJECT_DIR$/Dokumentasjon av obligatoriskOppgave.docx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jsonsqltest/app/About.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jsonsqltest/app/About.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mysqlapp.iws" />
@@ -2044,7 +2040,13 @@
       <option name="project" value="LOCAL" />
       <updated>1448388945577</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Gjort awesome endringer">
+      <created>1450096833760</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1450096833760</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2100,7 +2102,8 @@
     <MESSAGE value="laget splash screen" />
     <MESSAGE value="laget splash screen - lagt til comment&#10;" />
     <MESSAGE value="Kommentert Splash-klassen + rettet opp layouten i activity_main.xml (satt på textview) slik at det er lettere å se hva som skal inn i feltene" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kommentert Splash-klassen + rettet opp layouten i activity_main.xml (satt på textview) slik at det er lettere å se hva som skal inn i feltene" />
+    <MESSAGE value="Gjort awesome endringer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gjort awesome endringer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
