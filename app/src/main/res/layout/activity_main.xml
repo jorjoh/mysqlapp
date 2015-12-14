@@ -71,7 +71,8 @@
             android:spinnerMode="dropdown"
             android:textAlignment="textStart"
             android:layout_below="@+id/editText3"
-        android:layout_toEndOf="@+id/textView4" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/editText3" />
 
     <Button
         android:layout_width="wrap_content"

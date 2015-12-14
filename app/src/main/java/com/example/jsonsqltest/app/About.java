@@ -24,6 +24,7 @@ public class About extends MainActivity {
 	TextView message;
 	TextView resultTextView;
 
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -33,13 +34,14 @@ public class About extends MainActivity {
 		resultTextView = (TextView)findViewById(R.id.resultatVisAbout);
 		showDataFromDB = (Button)findViewById(R.id.showDataAbout);
 
+
 		// Setter melding i TextView når du kommer du kommer inn About.class
 		message.setText("Denne applikasjonen er laget av Jørgen Johansen");
 
 		// Setter på en lytter på "showDataFromDB" knappen og kjører kode under
-		showDataFromDB.setOnClickListener(new View.OnClickListener() {
+		/*showDataFromDB.setOnClickListener(new View.OnClickListener() {
 			@Override
-			public void onClick(View v) {
+			public void onClick(View v) {*/
 				// Json objekt som inneholder en URL som POST'er en forespørsel til DB som henter ut data fra tabellene
 				JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
 						showUrl, new Response.Listener<JSONObject>() {
@@ -61,9 +63,8 @@ public class About extends MainActivity {
 								//System.out.println(duration + " " + distance + " " + area + " " + target + "\n");
 
 								// Denne funksjonaliteten gjør slik at det går an å scrolle nedover i textviewen hvis det er så mye informasjon der at det dekker mer en skjermen
-								resultTextView.setText("");
 								resultTextView.setMovementMethod(new ScrollingMovementMethod());
-								resultTextView.append("Treningstid: " + duration + "\n" + "Distanse: " + distance + "\n" + "Område: " + area + " \n" + "Målet ditt: " + target + "\n"+ "Dato: " + created_at + "\n");
+								resultTextView.append("Treningstid: " + duration + "\n" + "Distanse: " + distance + "\n" + "Område: " + area + " \n" + "Målet ditt: " + target + "\n" + "Dato: " + created_at + "\n");
 								resultTextView.append("===\n");
 
 								//append(duration +" " + distance + " "+ area + " " + typeOfTraining + "\n");
@@ -83,8 +84,8 @@ public class About extends MainActivity {
 				requestQueue.add(jsonObjectRequest);
 
 			}
-		});
-	}
+		/*});*/
+	//}
 
 
 	@Override
